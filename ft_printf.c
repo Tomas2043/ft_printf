@@ -6,7 +6,7 @@
 /*   By: toandrad <toandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 13:07:41 by toandrad          #+#    #+#             */
-/*   Updated: 2025/05/21 12:02:23 by toandrad         ###   ########.fr       */
+/*   Updated: 2025/05/22 15:52:10 by toandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static int	ft_check_format(va_list args, const char format)
 		return (ft_putchar('%'));
 	return (0);
 }
-
-/*int	main(void)
+/*
+int	main(void)
 {
 	int	count1;
 	int	count2;
@@ -106,6 +106,12 @@ static int	ft_check_format(va_list args, const char format)
 	printf("======== NULL POINTER ======\n");
 	count1 = ft_printf("ft_printf: %p\n", null_ptr);
 	count2 = printf("og_printf: %p\n", null_ptr);
+	printf("ft_printf return: %d\n", count1);
+	printf("og_printf return: %d\n", count2);
+
+	printf("============= %% ============\n");
+	count1 = ft_printf("ft_printf: %%\n");
+	count2 = printf("og_printf: %%\n");
 	printf("ft_printf return: %d\n", count1);
 	printf("og_printf return: %d\n", count2);
 }*/
