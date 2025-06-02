@@ -6,25 +6,25 @@
 #    By: toandrad <toandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/13 12:23:27 by toandrad          #+#    #+#              #
-#    Updated: 2025/05/29 13:56:30 by toandrad         ###   ########.fr        #
+#    Updated: 2025/06/02 11:01:49 by toandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I.
 AR = ar rcs
 
 SRCS =	ft_printf.c \
-		Utils/ft_putchar.c \
-		Utils/ft_puthex.c \
-		Utils/ft_putnbr.c \
-		Utils/ft_putptr.c \
-		Utils/ft_putstr.c \
-		Utils/ft_putunsigned.c
+		utils/ft_putchar.c \
+		utils/ft_puthex.c \
+		utils/ft_putnbr.c \
+		utils/ft_putptr.c \
+		utils/ft_putstr.c \
+		utils/ft_putunsigned.c
 
-OBJSDIR = Objects
+OBJSDIR = objects
 SRC_NAMES = $(notdir $(SRCS))
 OBJS = $(addprefix $(OBJSDIR)/, $(SRC_NAMES:.c=.o))
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJS)
 $(OBJSDIR)/%.o: %.c ft_printf.h | $(OBJSDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIR)/%.o: Utils/%.c ft_printf.h | $(OBJSDIR)
+$(OBJSDIR)/%.o: utils/%.c ft_printf.h | $(OBJSDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJSDIR):
